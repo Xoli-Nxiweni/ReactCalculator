@@ -1,0 +1,98 @@
+*::before, *::after{
+    box-sizing: border-box;
+}
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-thumb{
+    background: #000000;
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    background: #000000;
+    width: 10px;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: whitesmoke;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Calculator-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 6rem);
+    grid-template-rows: minmax(8rem, auto) repeat(5, 5rem);
+    justify-content: center;
+    padding: 20px;
+    box-shadow: 10px 10px 50px #9a9a9a;
+}
+.Calculator-grid > button{
+    cursor: pointer;
+    font-size: 2rem;
+    border: 3px solid rgb(146, 146, 146);
+    border-radius: 10px;
+    outline: none;
+    background-color: transparent;
+    color: rgb(145, 145, 145);
+    margin: 2px;
+}
+.Calculator-grid > button:hover,
+.Calculator-grid > button:focus{
+    background-color: rgba(162, 162, 162, 0.502);
+}
+.span-two{
+    grid-column: span 2;
+}
+.output{
+    grid-column: span 4;
+    display: flex;
+    color: #2a28a0;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: .85rem;
+    word-wrap: break-word;
+    word-break: break-all;
+    box-shadow: inset 0 0 10px #9c9c9c;
+    border-radius: 20px;
+    border: 1px solid rgb(146, 146, 146);
+}
+.output .Previous-operant{
+    color: rgb(114, 114, 114);
+    font-size: 1.5rem;
+}
+.output .current-operant{
+    color: rgb(0, 0, 0);
+    font-size: 2.5rem;
+}
+@media (max-width: 550px) {
+    .Calculator-grid{
+        display: grid;
+        grid-template-columns: repeat(4, 3.5rem);
+        grid-template-rows: minmax(5rem, auto) repeat(5, 3.2rem);
+        justify-content: center;
+        padding: 20px;
+        box-shadow: 10px 10px 50px #9a9a9a;
+    }
+    .Calculator-grid > button{
+        cursor: pointer;
+        font-size: 1rem;
+        border: 3px solid rgb(146, 146, 146);
+        border-radius: 10px;
+        outline: none;
+        background-color: transparent;
+        color: rgb(145, 145, 145);
+        margin: 2px;
+    }
+    .output .Previous-operant{
+        color: rgb(114, 114, 114);
+        font-size: .8rem;
+    }
+    .output .current-operant{
+        color: rgb(0, 0, 0);
+        font-size: 1.2rem;
+    }
+}
